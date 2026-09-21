@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Muhammad Naveed — AI/ML Engineer in Lahore working with machine learning, LLMs, RAG, AI agents, Python and FastAPI.">
+  <title>Muhammad Naveed — AI/ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme:light dark;
+      --bg:#E6E8E6;--paper:#fff;--ink:#242C1C;--muted:#777b78;--soft:#A7A9AB;--line:rgba(36,44,28,.18);
+      --lime:#67E213;--lime-pale:#dfffbc;--dark:#242C1C;--dark-card:#1d2318;--shadow:0 20px 60px rgba(36,44,28,.12);
+      --sans:"Space Grotesk",sans-serif;
+    }
+    @media(prefers-color-scheme:dark){
+      :root{--bg:#151914;--paper:#22271f;--ink:#eef1e9;--muted:#c0c3bc;--soft:#9a9e98;--line:rgba(238,241,233,.17);--lime:#67E213;--lime-pale:#314720;--dark:#eef1e9;--dark-card:#0d100b;--shadow:0 20px 60px rgba(0,0,0,.3)}
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:24px}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+    button{font:inherit}
+    .wrap{width:min(1360px,calc(100% - 36px));margin-inline:auto}
+    .serif{font-family:inherit;font-style:normal;font-weight:inherit}
+    .hero{position:relative;min-height:820px;overflow:hidden;padding:26px 32px 0;background:var(--paper);border-radius:0 0 32px 32px;isolation:isolate}
+    .hero::before{content:"";position:absolute;z-index:-2;width:min(820px,75vw);height:min(680px,65vw);left:50%;bottom:-120px;transform:translateX(-50%);background:radial-gradient(ellipse at 50% 58%,var(--lime) 0 16%,rgba(103,226,19,.82) 34%,rgba(103,226,19,.38) 53%,rgba(103,226,19,0) 75%);filter:blur(5px)}
+    .hero::after{content:"";position:absolute;z-index:-3;inset:0;background:radial-gradient(circle at 50% 76%,rgba(103,226,19,.22),transparent 53%)}
+    nav{position:relative;z-index:20;display:flex;align-items:center;justify-content:flex-end;gap:24px}
+    .menu-button{width:50px;height:50px;display:grid;place-items:center;border:0;border-radius:50%;background:var(--bg);color:var(--ink);cursor:pointer;transition:background .2s ease,color .2s ease}
+    .menu-button:hover{background:var(--ink);color:var(--paper)}
+    .menu-button svg{width:21px;height:21px}
+    .nav-menu{position:absolute;right:0;top:60px;display:none;width:210px;padding:14px;background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+    .nav-menu.open{display:grid}
+    .nav-menu a{padding:10px 12px;border-radius:12px;font-size:14px}
+    .nav-menu a:hover{background:var(--bg)}
+    .availability{position:absolute;z-index:8;left:32px;top:104px;display:flex;align-items:center;padding:11px 16px;border-radius:999px;background:var(--paper);box-shadow:0 10px 34px rgba(36,44,28,.11);font-size:13px;font-weight:600}
+    .hero-title{position:absolute;z-index:5;top:160px;left:32px;right:32px;margin:0;color:var(--ink);line-height:1}
+    .hero-title .hello{display:block;margin-bottom:9px;font-size:clamp(14px,1.4vw,18px);font-weight:600;letter-spacing:-.02em}
+    .hero-title strong{display:block;width:100%;font-size:clamp(38px,5.2vw,72px);font-weight:700;letter-spacing:-.065em;line-height:.95;white-space:nowrap}
+    .hero-title em{display:block;margin-top:12px;font-family:var(--sans);font-size:clamp(20px,2.2vw,30px);font-style:normal;font-weight:600;letter-spacing:-.04em;line-height:1}
+    .hero-portrait{position:absolute;z-index:4;left:50%;bottom:-3px;width:min(500px,39vw);height:auto;transform:translateX(-50%);filter:drop-shadow(0 28px 24px rgba(36,44,28,.18));pointer-events:none}
+    .hero-note{position:absolute;z-index:8;right:36px;bottom:135px;width:235px;margin:0;color:#394031;font-size:14px;line-height:1.55}
+    @media(prefers-color-scheme:dark){.hero-note{color:#d7dacd}}
+    .hero-actions{position:absolute;z-index:9;right:36px;bottom:40px;display:flex;gap:10px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 23px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:600;transition:transform .2s ease,background .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-dark{background:#151811;color:#fff;border-color:#151811}
+    .btn-paper{background:var(--paper);color:var(--ink)}
+    .marquee{margin:20px 0 0;overflow:hidden;border-block:1px solid var(--line);background:rgba(167,169,171,.14);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+    .marquee-track{display:flex;width:max-content;animation:roll 27s linear infinite}
+    .tech-row{display:flex;align-items:center;gap:28px;padding:20px 15px;color:var(--muted);font-size:14px;font-weight:500;white-space:nowrap}
+    .tech-row b{color:var(--lime);font-size:11px}
+    @keyframes roll{to{transform:translateX(-50%)}}
+    section.content-section{padding-top:120px}
+    .kicker{font-family:var(--sans);font-style:normal;font-size:20px;font-weight:600;color:var(--muted)}
+    .section-title{margin:10px 0 0;font-size:clamp(50px,6vw,86px);line-height:.95;letter-spacing:-.065em;font-weight:700}
+    .works-shell{position:relative;padding:88px 38px 42px;background:var(--lime);border-radius:32px;color:#182011;box-shadow:var(--shadow)}
+    .works-label{position:absolute;top:-22px;left:50%;transform:translateX(-50%);padding:11px 21px;border-radius:999px;background:white;color:#242C1C;box-shadow:0 10px 24px rgba(36,44,28,.13);font-family:var(--sans);font-size:18px;font-style:normal;font-weight:600}
+    .works-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:38px}
+    .works-head h2{max-width:680px;margin:0;font-size:clamp(48px,6vw,84px);line-height:.92;letter-spacing:-.065em}
+    .works-head p{max-width:330px;margin:0 0 8px;font-size:15px;color:#354328}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .project{min-width:0;padding:18px 18px 20px;background:var(--paper);border-radius:25px;color:var(--ink);box-shadow:0 16px 35px rgba(26,36,15,.10)}
+    .project:nth-child(2),.project:nth-child(3){transform:translateY(18px)}
+    .project-art{position:relative;height:310px;overflow:hidden;border-radius:18px;background:#dce4d4}
+    .project-art img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+    .project:hover .project-art img{transform:scale(1.025)}
+    .project:nth-child(2) .project-art{background:#1b2018}.project:nth-child(3) .project-art{background:#e9eae7}.project:nth-child(4) .project-art{background:#bce89f}
+    .project-meta{display:flex;justify-content:space-between;gap:18px;padding:18px 3px 2px}
+    .project h3{margin:0;font-size:27px;letter-spacing:-.04em}.project p{max-width:460px;margin:7px 0 0;color:var(--muted);font-size:14px}
+    .arrow{flex:0 0 43px;width:43px;height:43px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:var(--paper);font-size:18px}
+    .mock-window{position:absolute;inset:24px 20px -28px;border:1px solid rgba(36,44,28,.18);border-radius:16px;background:#fbfcf8;box-shadow:0 24px 45px rgba(36,44,28,.18);transform:rotate(-2deg);overflow:hidden;color:#20261b}
+    .project:nth-child(2) .mock-window{background:#f7f9f2;transform:rotate(2deg)}.project:nth-child(3) .mock-window{inset:28px 42px -25px;transform:none}.project:nth-child(4) .mock-window{transform:rotate(-1deg)}
+    .window-bar{height:36px;display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid #dfe2d8}.window-bar i{width:6px;height:6px;border-radius:50%;background:#b9bdb3}.window-bar i:first-child{background:#67E213}
+    .mock-body{padding:18px}.mock-title{width:45%;height:13px;border-radius:8px;background:#242C1C}.mock-line{width:70%;height:7px;margin-top:10px;border-radius:8px;background:#cdd1c8}.mock-panel{height:150px;margin-top:19px;border-radius:12px;background:linear-gradient(135deg,#28391c,#88c55b);display:grid;place-items:center;color:white;font-size:12px}.project:nth-child(2) .mock-panel{background:#242C1C}.project:nth-child(3) .mock-panel{background:#eef0e9}.project:nth-child(4) .mock-panel{background:linear-gradient(135deg,#f8faf4,#d8f7c3)}
+    .chat-lines{width:100%;padding:15px}.bubble{width:70%;margin-bottom:12px;padding:11px;border-radius:12px;background:#dadfd3;font-size:10px}.bubble.right{margin-left:auto;background:#67E213}.translate-columns{display:grid;grid-template-columns:1fr 1fr;width:100%;height:100%}.translate-columns div{padding:16px}.translate-columns div+div{border-left:1px solid #d6dacd}.tiny-label{display:inline-block;padding:5px 8px;border-radius:999px;background:#67E213;color:#1c2715;font-size:9px;font-weight:700}
+    .statement{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:38px;text-align:center;padding:135px 7% 125px}
+    .statement-copy{max-width:940px}
+    .statement-copy .kicker{color:var(--ink);font-size:18px}
+    .statement h2{margin:18px 0 0;font-size:clamp(40px,5.2vw,70px);line-height:1.06;letter-spacing:-.055em;font-weight:600}
+    .statement h2 span{color:var(--soft);font-weight:500}
+    .statement-skills{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;max-width:850px}
+    .skill-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:13px;font-weight:500;white-space:nowrap}
+    .skill-pill i{font-style:normal;font-weight:700;font-size:10px;color:#345424}
+    .process-intro{text-align:center;margin-bottom:70px}.process-intro .section-title{margin-inline:auto}
+    .process-cards{position:relative;display:flex;align-items:stretch;max-width:1120px;margin:0 auto;padding:32px 24px 72px}
+    .step{position:relative;z-index:2;flex:1 1 0;min-width:0;min-height:390px;padding:31px;border-radius:34px;background:var(--paper);box-shadow:0 24px 55px rgba(36,44,28,.15);display:flex;flex-direction:column;justify-content:space-between}
+    .step:nth-of-type(1){transform:rotate(-5deg);transform-origin:80% 85%}.step:nth-of-type(2){z-index:3;margin-left:-28px;transform:translateY(-30px) rotate(1deg)}.step:nth-of-type(3){margin-left:-28px;transform:rotate(5deg);transform-origin:20% 85%}
+    .step-num{font-size:72px;font-weight:400;line-height:1;letter-spacing:-.08em;color:var(--soft)}
+    .step h3{margin:0 0 10px;font-size:31px;letter-spacing:-.04em}.step p{max-width:270px;margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+    .process-connector{position:absolute;z-index:5;width:104px;height:44px;color:var(--lime);pointer-events:none;overflow:visible}.process-connector path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}.process-connector circle{fill:var(--paper);stroke:currentColor;stroke-width:2}.connector-one{left:30.5%;top:46%;transform:rotate(-4deg)}.connector-two{left:62%;top:44%;transform:rotate(5deg)}
+    .about-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:7vw;align-items:center}
+    .portrait-card{position:relative;min-height:630px;border-radius:32px;background:var(--dark-card);transform:rotate(-3deg);overflow:hidden;box-shadow:var(--shadow);color:#fff}
+    .portrait-card::before{content:"";position:absolute;left:50%;bottom:70px;width:90%;height:55%;transform:translateX(-50%);background:radial-gradient(ellipse,var(--lime),rgba(103,226,19,.15) 55%,transparent 72%)}
+    .about-photo{position:absolute;z-index:2;left:50%;bottom:95px;width:92%;transform:translateX(-50%);filter:drop-shadow(0 20px 20px rgba(0,0,0,.28))}
+    .photo-caption{position:absolute;z-index:4;left:25px;right:25px;bottom:22px;display:flex;align-items:end;justify-content:space-between;gap:20px;border-top:1px solid rgba(255,255,255,.25);padding-top:16px}
+    .photo-caption strong{display:block;font-size:18px}.photo-caption small{color:#b9bdb4}
+    .socials{display:flex;gap:8px}.socials a{width:36px;height:36px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.24);border-radius:50%}.socials svg{width:15px;height:15px}
+    .about-copy h2{margin:13px 0 26px;font-size:clamp(44px,5vw,74px);line-height:.97;letter-spacing:-.06em}.about-copy>p{max-width:660px;margin:0;color:var(--muted);font-size:20px;line-height:1.65}
+    .timeline{margin-top:45px}.timeline-row{display:grid;grid-template-columns:125px 1fr;gap:24px;padding:21px 0;border-top:1px solid var(--line)}.timeline-row>span{color:var(--soft);font-size:13px}.timeline-row strong{display:block;font-weight:600}.timeline-row small{display:block;margin-top:5px;color:var(--muted);font-size:13px}
+    .footer-cta{position:relative;margin-top:130px;padding:100px clamp(25px,6vw,90px) 0;border-radius:32px 32px 0 0;background:linear-gradient(160deg,var(--lime) 0%,var(--lime-pale) 36%,var(--paper) 80%);color:#1d2517;overflow:hidden}
+    .footer-cta .kicker{color:#405033}.footer-cta h2{max-width:1120px;margin:14px 0 45px;font-size:clamp(64px,10vw,144px);font-weight:300;letter-spacing:-.075em;line-height:.82}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:30px 0 35px;border-top:1px solid rgba(36,44,28,.19)}
+    .footer-links{display:flex;flex-wrap:wrap;gap:16px 25px;font-size:14px}.footer-links a{border-bottom:1px solid rgba(36,44,28,.28)}
+    .footer-meta{display:flex;justify-content:space-between;gap:20px;padding:21px 0;border-top:1px solid rgba(36,44,28,.16);font-size:12px;color:#526047}
+    .reveal{opacity:1}.stagger-item{opacity:.35;translate:0 24px}.reveal.in .stagger-item,.reveal.stagger-item.in,.hero .stagger-item{animation:stagger-rise .72s cubic-bezier(.22,.65,.28,1) both;animation-delay:var(--stagger-delay,0s)}
+    @keyframes stagger-rise{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+    @media(max-width:900px){
+      .hero{min-height:900px}.hero-title{top:165px}.hero-portrait{width:min(500px,68vw);bottom:125px}.hero-note{display:none}.hero-actions{bottom:25px}.project-grid{grid-template-columns:1fr}.project:nth-child(2),.project:nth-child(3){transform:none}.statement{padding:115px 5% 105px}.process-cards{padding-inline:10px}.step{min-height:330px;padding:25px}.step-num{font-size:62px}.step h3{font-size:27px}.step p{font-size:13px}.about-grid{grid-template-columns:1fr}.portrait-card{width:min(560px,88%);margin-inline:auto}.about-copy{padding-inline:5%}
+    }
+    @media(max-width:620px){
+      .wrap{width:min(100% - 20px,1360px)}.hero{min-height:740px;padding:18px 16px 0;border-radius:0 0 25px 25px}.menu-button{width:44px;height:44px}.availability{top:84px;left:16px;right:16px;width:max-content;max-width:calc(100% - 32px);font-size:11px;padding:9px 12px}.hero-title{top:137px;left:16px;right:16px}.hero-title .hello{margin-bottom:7px;font-size:13px}.hero-title strong{font-size:clamp(27px,8.45vw,40px);letter-spacing:-.055em}.hero-title em{margin-top:9px;font-size:clamp(17px,4.9vw,21px)}.hero-portrait{width:min(360px,84vw);bottom:84px}.hero-note{display:none}.hero-actions{left:16px;right:16px;bottom:16px}.hero-actions .btn{flex:1;min-height:47px;padding:0 11px;font-size:12px}.marquee{mask-image:none}.marquee-track{width:100%;animation:none}.tech-row{width:100%;padding:15px 10px;flex-wrap:wrap;justify-content:center;gap:9px 14px;font-size:11px;white-space:normal}.tech-row[aria-hidden="true"]{display:none}section.content-section{padding-top:88px}.works-shell{padding:72px 14px 20px;border-radius:26px}.works-head{display:block;padding-inline:5px}.works-head p{margin-top:18px}.project-grid{gap:13px}.project{padding:12px;border-radius:21px}.project-art{height:245px}.project-meta{padding:16px 4px 6px}.project h3{font-size:23px}.project p{font-size:13px}.statement{padding:92px 0 88px;gap:30px}.statement h2{font-size:clamp(34px,10vw,43px)}.statement-skills{gap:8px}.skill-pill{font-size:10px;padding:7px 10px}.skill-pill i{font-size:9px}.process-intro{text-align:left;margin-bottom:42px}.process-cards{display:grid;gap:0;padding:22px 8px 62px}.step{min-height:250px;padding:25px}.step:nth-of-type(1){transform:rotate(-2deg)}.step:nth-of-type(2){margin:-14px 0 0;transform:translateY(0) rotate(1deg)}.step:nth-of-type(3){margin:-14px 0 0;transform:rotate(-1deg)}.step-num{font-size:58px}.step h3{font-size:27px}.step p{font-size:14px}.process-connector{display:none}.portrait-card{width:94%;min-height:500px;border-radius:25px}.about-photo{width:110%;bottom:82px}.photo-caption{left:18px;right:18px;bottom:17px}.photo-caption strong{font-size:15px}.socials a{width:32px;height:32px}.about-copy{padding-inline:0}.about-copy>p{font-size:17px}.timeline-row{grid-template-columns:1fr;gap:5px}.footer-cta{margin-top:90px;padding:70px 20px 0;border-radius:25px 25px 0 0}.footer-cta h2{font-size:60px;line-height:.86}.footer-row{align-items:flex-start;flex-direction:column}.footer-row .btn{width:100%}.footer-meta{flex-direction:column;gap:5px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee-track{animation:none}.stagger-item,.reveal.in .stagger-item,.hero .stagger-item{opacity:1;translate:none;animation:none}.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <nav aria-label="Primary navigation">
+          <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 8h14M5 16h14"/></svg></button>
+          <div class="nav-menu" id="navMenu"><a href="#work">Selected Works</a><a href="#process">How I Work</a><a href="#about">Who I Am</a><a href="#contact">Contact</a></div>
+        </nav>
+        <div class="availability">Available for on-site opportunities in Lahore</div>
+        <h1 class="hero-title" id="hero-title"><span class="hello stagger-item" style="--stagger-delay:.1s">Hi, I’m</span><strong class="stagger-item" style="--stagger-delay:.2s">Muhammad Naveed</strong><em class="stagger-item" style="--stagger-delay:.3s">AI/ML Engineer</em></h1>
+        <img class="hero-portrait stagger-item" style="--stagger-delay:.4s" src="assets/muhammad-naveed-transparent.png" alt="Muhammad Naveed">
+        <p class="hero-note">I build practical AI and machine learning systems, from computer vision models to LLM-powered applications.</p>
+        <div class="hero-actions"><a class="btn btn-paper" href="assets/Muhammad-Naveed-CV.pdf" download>Download CV</a><a class="btn btn-dark" href="https://wa.me/923136035910" target="_blank" rel="noreferrer">Get in Touch <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <div class="marquee" aria-label="Technical skills">
+        <div class="marquee-track">
+          <div class="tech-row"><span>Python</span><b>●</b><span>FastAPI</span><b>●</b><span>Machine Learning</span><b>●</b><span>Deep Learning</span><b>●</b><span>CNNs</span><b>●</b><span>LLMs</span><b>●</b><span>RAG</span><b>●</b><span>AI Agents</span><b>●</b><span>OOP</span><b>●</b><span>DSA</span><b>●</b></div>
+          <div class="tech-row" aria-hidden="true"><span>Python</span><b>●</b><span>FastAPI</span><b>●</b><span>Machine Learning</span><b>●</b><span>Deep Learning</span><b>●</b><span>CNNs</span><b>●</b><span>LLMs</span><b>●</b><span>RAG</span><b>●</b><span>AI Agents</span><b>●</b><span>OOP</span><b>●</b><span>DSA</span><b>●</b></div>
+        </div>
+      </div>
+
+      <section class="content-section reveal" id="work">
+        <div class="works-shell">
+          <div class="works-label">Selected Works</div>
+          <div class="works-head"><h2>Ideas turned into<br><span class="serif">working AI.</span></h2><p>Four projects across computer vision, intelligent matching and language technology.</p></div>
+          <div class="project-grid">
+            <article class="project"><div class="project-art"><img src="assets/project-plantguard.png" alt="Illustrated PlantGuard cover showing a leaf analyzed by a CNN vision system"></div><div class="project-meta"><div><h3>PlantGuard</h3><p>AI plant-disease detection built with convolutional neural networks.</p></div><a class="arrow" href="https://github.com/muhammadnaveedgurmanii-png" target="_blank" rel="noreferrer" aria-label="Explore PlantGuard on GitHub">↗</a></div></article>
+            <article class="project"><div class="project-art"><img src="assets/project-ai-jobmatch.png" alt="Illustrated AI JobMatch cover showing a clean AI-assisted job matching interface"></div><div class="project-meta"><div><h3>AI JobMatch</h3><p>An AI-powered web app for matching candidate profiles with relevant jobs.</p></div><a class="arrow" href="https://github.com/muhammadnaveedgurmanii-png/AI-JobMatch" target="_blank" rel="noreferrer" aria-label="Explore AI JobMatch on GitHub">↗</a></div></article>
+            <article class="project"><div class="project-art"><img src="assets/project-soul-ai-chatbot.png" alt="Illustrated soul-ai-chatbot cover showing a modern conversational AI interface"></div><div class="project-meta"><div><h3>soul-ai-chatbot</h3><p>An LLM chatbot designed for useful conversational experiences.</p></div><a class="arrow" href="https://github.com/muhammadnaveedgurmanii-png" target="_blank" rel="noreferrer" aria-label="Explore soul-ai-chatbot on GitHub">↗</a></div></article>
+            <article class="project"><div class="project-art"><img src="assets/project-language-translator.png" alt="Illustrated language-translator cover showing a clean multilingual translation interface"></div><div class="project-meta"><div><h3>language-translator</h3><p>A focused language translation application built during AI internship work.</p></div><a class="arrow" href="https://github.com/muhammadnaveedgurmanii-png" target="_blank" rel="noreferrer" aria-label="Explore language-translator on GitHub">↗</a></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="statement reveal" aria-labelledby="statement-title">
+        <div class="statement-copy"><div class="kicker">Hallo!</div><h2 id="statement-title">I focus on building clear, useful AI systems <span>that turn thoughtful ideas into practical results.</span></h2></div>
+        <div class="statement-skills" aria-label="Core skills"><div class="skill-pill"><i>ML</i>Machine Learning</div><div class="skill-pill"><i>DL</i>Deep Learning / CNNs</div><div class="skill-pill"><i>LLM</i>LLMs &amp; RAG</div><div class="skill-pill"><i>AI</i>AI Agents</div><div class="skill-pill"><i>API</i>FastAPI</div><div class="skill-pill"><i>PY</i>Python</div></div>
+      </section>
+
+      <section class="content-section reveal" id="process">
+        <div class="process-intro"><div class="kicker">/ How I Work</div><h2 class="section-title">Here’s how it works</h2></div>
+        <div class="process-cards">
+          <article class="step"><div class="step-num">01</div><div><h3>Discover</h3><p>Understanding your goals, users, and challenges through research and strategy.</p></div></article>
+          <svg class="process-connector connector-one" viewBox="0 0 104 44" aria-hidden="true"><circle cx="5" cy="26" r="4"/><path d="M9 26 C24 5 37 43 54 21 S81 9 99 23"/><circle cx="99" cy="23" r="4"/></svg>
+          <article class="step"><div class="step-num">02</div><div><h3>Design</h3><p>Transforming insights into intuitive, beautiful, and functional product experiences</p></div></article>
+          <svg class="process-connector connector-two" viewBox="0 0 104 44" aria-hidden="true"><circle cx="5" cy="23" r="4"/><path d="M9 23 C24 43 38 4 55 24 S82 38 99 19"/><circle cx="99" cy="19" r="4"/></svg>
+          <article class="step"><div class="step-num">03</div><div><h3>Deliver</h3><p>Testing, refining, and launching the final product with clarity and precision.</p></div></article>
+        </div>
+      </section>
+
+      <section class="content-section reveal" id="about">
+        <div class="about-grid">
+          <div class="portrait-card"><img class="about-photo" src="assets/muhammad-naveed-transparent.png" alt="Muhammad Naveed"><div class="photo-caption"><div><strong>Muhammad Naveed</strong><small>AI/ML Engineer</small></div><div class="socials"><a href="https://www.linkedin.com/in/muhammad-naveed-gurmani" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5H3.2V19h3.3V8.5ZM4.8 3a1.9 1.9 0 1 0 0 3.8A1.9 1.9 0 0 0 4.8 3ZM19.5 13c0-3.2-1.7-4.7-4-4.7-1.8 0-2.7 1-3.1 1.7V8.5H9.1V19h3.3v-5.2c0-1.4.3-2.8 2-2.8 1.7 0 1.7 1.6 1.7 2.9V19h3.3l.1-6Z"/></svg></a><a href="https://github.com/muhammadnaveedgurmanii-png" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5A3.9 3.9 0 0 1 6.6 8.6c-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.8 1.1a9.6 9.6 0 0 1 5 0c2-1.4 2.8-1.1 2.8-1.1.6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1.1 2.7c0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg></a><a href="mailto:muhammadnaveedgurmanii@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18v12H3z"/><path d="m3 7 9 7 9-7"/></svg></a></div></div></div>
+          <div class="about-copy"><div class="kicker">/ Who Am I</div><h2>Fresh perspective.<br><span class="serif">Serious craft.</span></h2><p>I’m a fresh Information Technology graduate in Lahore, building my career in AI and machine learning. I’m currently an Artificial Intelligence Intern at CodeAlpha, where I continue turning technical learning into practical applications.</p><div class="timeline"><div class="timeline-row"><span>Experience</span><div><strong>Artificial Intelligence Intern — CodeAlpha</strong><small>Aug 2026—Present</small></div></div><div class="timeline-row"><span>Education</span><div><strong>BS Information Technology</strong><small>University of Education Lahore · 2022—2026</small></div></div><div class="timeline-row"><span>Location</span><div><strong>Lahore, Pakistan</strong><small>Open to on-site opportunities across Lahore</small></div></div></div></div>
+        </div>
+      </section>
+
+      <footer class="footer-cta reveal" id="contact">
+        <div class="kicker">Have a role or an idea?</div><h2>Let’s Make<br>It Happen</h2>
+        <div class="footer-row"><div class="footer-links"><a href="mailto:muhammadnaveedgurmanii@gmail.com">Email</a><a href="tel:+923136035910">(+92) 3136035910</a><a href="https://www.linkedin.com/in/muhammad-naveed-gurmani" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/muhammadnaveedgurmanii-png" target="_blank" rel="noreferrer">GitHub</a><span>Lahore, Pakistan</span></div><a class="btn btn-dark" href="https://wa.me/923136035910" target="_blank" rel="noreferrer">Get In Touch <span aria-hidden="true">↗</span></a></div>
+        <div class="footer-meta"><span>© 2026 Muhammad Naveed</span><span>AI/ML Engineer</span></div>
+      </footer>
+    </div>
+  </main>
+  <script>
+    const menuButton=document.getElementById('menuButton');
+    const navMenu=document.getElementById('navMenu');
+    menuButton.addEventListener('click',()=>{const isOpen=navMenu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(isOpen));menuButton.setAttribute('aria-label',isOpen?'Close menu':'Open menu')});
+    navMenu.addEventListener('click',e=>{if(e.target.matches('a')){navMenu.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open menu')}});
+    document.addEventListener('click',e=>{if(!navMenu.contains(e.target)&&!menuButton.contains(e.target)){navMenu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}});
+    const staggerGroups=[
+      ['.marquee',['.marquee-track']],
+      ['#work',['.works-label','.works-head','.project']],
+      ['.statement',['.statement-copy','.skill-pill']],
+      ['#process',['.process-intro','.step','.process-connector']],
+      ['#about',['.portrait-card','.about-copy']],
+      ['#contact',['.kicker','h2','.footer-row','.footer-meta']]
+    ];
+    staggerGroups.forEach(([group,items])=>{const root=document.querySelector(group);if(!root)return;root.classList.add('reveal');let index=0;items.forEach(selector=>root.querySelectorAll(selector).forEach(el=>{el.classList.add('stagger-item');el.style.setProperty('--stagger-delay',`${index++*.09}s`)}))});
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'))}
+  </script>
+</body>
+</html>
